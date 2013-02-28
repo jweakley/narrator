@@ -1,4 +1,4 @@
-= Narrator
+= Narrator {<img src="https://secure.travis-ci.org/jweakley/narrator.png?branch=master" />}[http://travis-ci.org/jweakley/narrator]
 
 Narrator is an activity library for Ruby on Rails that allow you to track what is happening on models and later use to build an activity or news stream. Tracking is done at the controller level with a simple narrate_resource command (which was inspired by the simplicity of Ryan Bates' CanCan gem).
 
