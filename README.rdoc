@@ -18,7 +18,7 @@ In <b> Rails 3 </b> add this line to your application's Gemfile and run the +bun
 
 == Questions or Problems?
 
-If you have any issues with Narrator which you cannot find the answer in the documentation[https://https://github.com/jweakley/narrator/wiki], please add an {issue on GitHub}[https://https://github.com/jweakley/narrator/issues]. Alternatively you can fork the project and send a pull request (limit one high five and/or fist bump per contribution).
+If you have any issues with Narrator which you cannot find the answer in the documentation[https://github.com/jweakley/narrator/wiki], please add an {issue on GitHub}[https://github.com/jweakley/narrator/issues]. Alternatively you can fork the project and send a pull request (limit one high five and/or fist bump per contribution).
 
 Please ensure the tests are passing by running `bundle` and `rake`.
 
