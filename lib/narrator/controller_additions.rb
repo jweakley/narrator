@@ -26,6 +26,6 @@ end
 
 if defined? ActionController::Base
   ActionController::Base.class_eval do
-    include CanCan::ControllerAdditions
+    include Narrator::ControllerAdditions
   end
 end
