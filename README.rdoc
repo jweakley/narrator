@@ -8,7 +8,7 @@ In <b> Rails 3 </b> add this line to your application's Gemfile and run the +bun
 
     gem "narrator"
 
-Once you have the Narrator gem install you will need to run the generator:
+Once you have the Narrator gem installed you will need to run the generator:
 
     rails generate narrator:migration
 
@@ -20,7 +20,7 @@ Narrator expects a +current_user+ method to exist in the controller. First, set 
 
 === 1. Mark a Model as Narratable
 
-Any model that we would like to have tracked by narrator needs to have <tt>narratble_model</tt> added to it.
+Any model that we would like to have tracked by narrator needs to have <tt>narratable_model</tt> added to it.
 
   class Article
     narratable_model
