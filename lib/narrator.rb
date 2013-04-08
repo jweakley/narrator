@@ -1,4 +1,4 @@
-require 'narrator/ability'
+require 'narrator/activity'
 require 'narrator/controller_resource'
 require 'narrator/controller_additions'
 
