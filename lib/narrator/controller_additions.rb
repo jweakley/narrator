@@ -6,9 +6,10 @@ module Narrator
         narrator_resource_class.add_before_filter(self, :narrate_resource, *args)
       end
 
-      def narrate(subject, target = nil, verb = params[:action], actor_id = current_user.user_profile_id)
-        if user_signed_in?
-          subject.class.delay.track_user_activity(subject.id, actor_id, target.class.to_s, (target.blank? ? nil : target.id), verb.to_s)
+      def narrate(subject, verb = params[:action], actor = current_user, target = nil)
+        if subject.class.respond_to? :track_user_activity
+          # Add some config way of determining to use delayed jobs.
+          subject.class.track_user_activity((subject.blank? ? nil : subject.id), (actor.blank? ? nil : actor.id), verb.to_s, target.class.to_s, (target.blank? ? nil : target.id))
         end
       end
 

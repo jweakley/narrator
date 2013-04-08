@@ -8,9 +8,57 @@ In <b> Rails 3 </b> add this line to your application's Gemfile and run the +bun
 
     gem "narrator"
 
+Once you have the Narrator gem install you will need to run the generator:
+
+    rails generate narrator:migration
+
+This generator will add the migrations needed for the activity tracking. Currently this only works for ActiveRecord
+
 == Getting Started
 
-* Coming Soon
+Narrator expects a +current_user+ method to exist in the controller. First, set up some authentication (such as Authlogic[https://github.com/binarylogic/authlogic] or Devise[https://github.com/plataformatec/devise]).
+
+=== 1. Mark a Model as Narratable
+
+Any model that we would like to have tracked by narrator needs to have <tt>narratble_model</tt> added to it.
+
+  class Article
+    narratable_model
+    ...
+  end
+
+See {Narrated Model}[https://github.com/jweakley/narrator/wiki/Narrated-Model] for more details and features.
+
+=== 2. Narrate the Model's activities from the controller
+
+The <tt>narrate</tt> method in the controller will narrate something important.
+
+  def create
+    ...
+    @article = Article.new(params[:article])
+    ...
+    narrate @article if @article.save
+    ....
+  end
+
+In this example, if the article is successfully saved, an activity gets logged for the article.
+
+See {Tracked Activities}[https://github.com/jweakley/narrator/wiki/Tracked-Activities] for more details and features with tracked activities.
+
+== Future Features
+
+Automagical Narration
+
+  class ArticlesController < ApplicationController
+    narrate_resource
+
+    def create
+      ...
+      respond_with @article
+      # @article is automaticly tracked if it is valid
+    end
+  end
+
 
 == Wiki Docs
 
