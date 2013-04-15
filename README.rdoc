@@ -11,9 +11,13 @@ In <b> Rails 3 </b> add this line to your application's Gemfile and run the +bun
 
 Once you have the Narrator gem installed you will need to run the generator:
 
-    rails generate narrator:migration
+    rails generate narrator:install
 
-This generator will add the migrations needed for the activity tracking. Currently this only works for ActiveRecord
+This generator will add the migrations needed for the activity tracking. Currently this only works for ActiveRecord.
+
+After the migration has been added you will need to migrate your database to run the new migration
+
+    rake db:migrate
 
 == Getting Started
 
