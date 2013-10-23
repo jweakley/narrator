@@ -3,7 +3,11 @@ module Narrator
     module ClassMethods
 
       def narrate_resource(*args)
-        narrator_resource_class.add_after_filter(self, :narrate_resource, *args)
+        narrator_resource_class.add_after_filter(
+          self,
+          :narrate_resource,
+          *args
+        )
       end
 
       def narrator_resource_class
@@ -20,7 +24,13 @@ module Narrator
       base.helper_method :narrate
     end
 
-    def narrate(subject, actor = current_user,  target = nil, verb = params[:action], context = nil)
+    def narrate(
+      subject,
+      actor = current_user,
+      target = nil,
+      verb = params[:action],
+      context = nil
+    )
       if subject.class.respond_to? :track_user_activity
         # Add some config way of determining to use delayed jobs.
         subject.class.track_user_activity(

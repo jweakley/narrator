@@ -1,4 +1,5 @@
 require 'narrator/version'
+require 'active_record'
 require 'narrator/activity'
 require 'narrator/model_additions'
 require 'narrator/model_resources'
