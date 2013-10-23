@@ -1,6 +1,15 @@
 module Narrator
   class ControllerResource
 
+    def self.add_after_filter(controller_class, method, *args)
+      options = args.extract_options!
+      resource_name = args.first
+      after_filter_method = options.delete(:prepend) ? :prepend_after_filter : :after_filter
+      controller_class.send(after_filter_method, options.slice(:only, :except, :if, :unless)) do |controller|
+        controller.class.narrator_resource_class.new(controller, resource_name, options.except(:only, :except, :if, :unless)).send(method)
+      end
+    end
+
     def initialize(controller, *args)
       @controller = controller
       @params = controller.params
@@ -9,8 +18,7 @@ module Narrator
     end
 
     def narrate_resource
-      # TODO Add skipper for this method
-      @controller.narrate(subject, nil, params[:action], current_user)
+      @controller.narrate(resource_instance) if resource_instance.valid?
     end
 
     protected
@@ -19,12 +27,20 @@ module Narrator
       @controller.send(:current_user)
     end
 
-    def resource_class
-      case @options[:class]
-      when String then @options[:class].constantize
-      else @options[:class]
-      end
+    def resource_instance
+      @controller.instance_variable_get("@#{instance_name}")
     end
 
+    def name
+      @name || name_from_controller
+    end
+
+    def name_from_controller
+      @params[:controller].sub('Controller', '').underscore.split('/').last.singularize
+    end
+
+    def instance_name
+      @options[:instance_name] || name
+    end
   end
 end

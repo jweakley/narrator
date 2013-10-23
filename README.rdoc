@@ -15,7 +15,7 @@ Once you have the Narrator gem installed you will need to run the generator:
 
 This generator will add the migrations needed for the activity tracking. Currently this only works for ActiveRecord.
 
-After the migration has been added you will need to migrate your database to run the new migration
+After the migration has been added you will need to migrate your database to run the new migration.
 
     rake db:migrate
 
@@ -34,7 +34,19 @@ Any model that we would like to have tracked by narrator needs to have <tt>narra
 
 See {Narrated Model}[https://github.com/jweakley/narrator/wiki/Narrated-Model] for more details and features.
 
-=== 2. Narrate the Model's activities from the controller
+=== 1. Mark a Model as Narratable
+
+Any model that we would like to create activites (normally just User) needs to have <tt>narratable_actor</tt> added to it.
+
+  class User
+    narratable_actor
+    ...
+  end
+
+See {Narrated Actor}[https://github.com/jweakley/narrator/wiki/Narrated-ACtor] for more details and features.
+
+
+=== 3. Narrate the Model's activities from the controller
 
 The <tt>narrate</tt> method in the controller will narrate something important.
 

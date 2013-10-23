@@ -1,1 +1,1 @@
-require "narrator"
+require 'narrator'

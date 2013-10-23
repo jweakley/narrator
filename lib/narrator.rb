@@ -1,9 +1,7 @@
+require 'narrator/version'
 require 'narrator/activity'
-require 'narrator/controller_resource'
+require 'narrator/model_additions'
+require 'narrator/model_resources'
 require 'narrator/controller_additions'
-
-require "narrator/version"
-
-module Narrator
-  # Your code goes here...
-end
+require 'narrator/controller_resource'
+require 'narrator/narrator_railtie.rb' if defined?(Rails)
