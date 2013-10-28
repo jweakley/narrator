@@ -1,4 +1,6 @@
-= Narrator {<img src="https://secure.travis-ci.org/jweakley/narrator.png?branch=master" />}[http://travis-ci.org/jweakley/narrator]
+# Narrator
+
+[![Gem Version](https://badge.fury.io/rb/narrator.png)](http://badge.fury.io/rb/narrator) [![Build Status](https://travis-ci.org/jweakley/narraotr.png?branch=master)](https://travis-ci.org/jweakley/narraotr) [![Dependency Status](https://gemnasium.com/jweakley/narrator.png)](https://gemnasium.com/jweakley/narrator) [![Code Climate](https://codeclimate.com/github/jweakley/narrator.png)](https://codeclimate.com/github/jweakley/narrator) [![Coverage Status](https://coveralls.io/repos/jweakley/narrator/badge.png?branch=master)](https://coveralls.io/r/jweakley/narrator)
 
 Narrator is an activity library for Ruby on Rails that allow you to track what is happening on models and later use to build an activity or news stream. Tracking is done at the controller level with a simple narrate_resource command (which was inspired by the simplicity of Ryan Bates' CanCan gem).
 
