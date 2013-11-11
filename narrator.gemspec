@@ -11,6 +11,8 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Straightforward and flexable activity tracking for rails.}
   gem.summary       = %q{Straightforward and flexable activity tracking for rails.}
   gem.homepage      = 'https://github.com/jweakley/narrator'
+  gem.post_install_message = 'Thanks for installing Narrator!'
+  gem.license = 'MIT'
 
   gem.files         = `git ls-files`.split($RS)
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
@@ -21,6 +23,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency('rails', '~> 3.0')
 
+  gem.add_development_dependency 'rails', '~> 3.0'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rubocop'
