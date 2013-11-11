@@ -36,7 +36,7 @@ Any model that we would like to have tracked by narrator needs to have <tt>narra
 
 See {Narrated Model}[https://github.com/jweakley/narrator/wiki/Narrated-Model] for more details and features.
 
-=== 1. Mark a Model as Narratable
+=== 2. Mark a Model as an Actor
 
 Any model that we would like to create activites (normally just User) needs to have <tt>narratable_actor</tt> added to it.
 
@@ -45,7 +45,7 @@ Any model that we would like to create activites (normally just User) needs to h
     ...
   end
 
-See {Narrated Actor}[https://github.com/jweakley/narrator/wiki/Narrated-ACtor] for more details and features.
+See {Narrated Actor}[https://github.com/jweakley/narrator/wiki/Narrated-Actor] for more details and features.
 
 
 === 3. Narrate the Model's activities from the controller
