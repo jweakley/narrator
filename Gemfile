@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'ammeter', group: :development, github: 'strzibny/ammeter'
+gem 'coveralls', group: :test, require: false

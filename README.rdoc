@@ -1,6 +1,8 @@
 = Narrator
 
-{<img src="https://badge.fury.io/rb/narrator.png" alt="Gem Version" />}[http://badge.fury.io/rb/narrator] {<img src="https://travis-ci.org/jweakley/narrator.png?branch=master" alt="Build Status" />}[https://travis-ci.org/jweakley/narrator] {<img src="https://gemnasium.com/jweakley/narrator.png" alt="Dependency Status" />}[https://gemnasium.com/jweakley/narrator] {<img src="https://codeclimate.com/repos/526eb9df56b1026920012d3b/badges/3405e6bd353965704a4c/gpa.png" />}[https://codeclimate.com/repos/526eb9df56b1026920012d3b/feed]
+{<img src="https://badge.fury.io/rb/narrator.png" alt="Gem Version" />}[http://badge.fury.io/rb/narrator] {<img src="https://travis-ci.org/jweakley/narrator.png?branch=master" alt="Build Status" />}[https://travis-ci.org/jweakley/narrator] {<img src="https://gemnasium.com/jweakley/narrator.png" alt="Dependency Status" />}[https://gemnasium.com/jweakley/narrator] {<img src="https://coveralls.io/repos/jweakley/narrator/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/jweakley/narrator]
+
+
 
 
 Narrator is an activity library for Ruby on Rails that allow you to track what is happening on models and later use to build an activity or news stream. Tracking is done at the controller level with a simple narrate_resource command (which was inspired by the simplicity of Ryan Bates' CanCan gem).
@@ -30,6 +32,7 @@ Narrator expects a +current_user+ method to exist in the controller. First, set 
 Any model that we would like to have tracked by narrator needs to have <tt>narratable_model</tt> added to it.
 
   class Article
+    ...
     narratable_model
     ...
   end
@@ -41,6 +44,7 @@ See {Narrated Model}[https://github.com/jweakley/narrator/wiki/Narrated-Model] f
 Any model that we would like to create activites (normally just User) needs to have <tt>narratable_actor</tt> added to it.
 
   class User
+    ...
     narratable_actor
     ...
   end
