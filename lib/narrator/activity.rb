@@ -1,13 +1,5 @@
 module Narrator
   class Activity < ::ActiveRecord::Base
-    attr_accessible :owner,
-                    :subject,
-                    :actor,
-                    :target,
-                    :verb,
-                    :context,
-                    :has_seen
-
     belongs_to :owner, polymorphic: true
     belongs_to :actor, polymorphic: true
     belongs_to :subject, polymorphic: true
