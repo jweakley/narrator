@@ -21,9 +21,9 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = '>= 1.9'
 
-  gem.add_dependency('rails', '~> 3.0')
+  gem.add_dependency('rails', '~> 4.0')
 
-  gem.add_development_dependency 'rails', '~> 3.0'
+  gem.add_development_dependency 'rails', '~> 4.0'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rubocop'
